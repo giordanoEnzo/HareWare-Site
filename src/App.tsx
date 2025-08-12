@@ -96,12 +96,12 @@ function App() {
             <div className="flex items-center group cursor-pointer">
               {/*logo */}
               <div className="mr-3 group-hover:scale-110 transition-transform duration-300">
-                <img src="/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
+                <img src="/dist/HareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
               </div>
 
               {/* Letreiro */}
               <img
-                src="/public/letreiro.png"
+                src="/dist/letreiro.png"
                 alt="Letreiro"
                 className="h-10 max-w-[150px] object-contain" // ajuste a altura como quiser
               />
