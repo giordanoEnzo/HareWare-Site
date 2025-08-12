@@ -172,7 +172,7 @@ function App() {
           <div className="text-center relative z-10">
             <div className="inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 mb-8 hover:bg-white/10 transition-all duration-300 cursor-pointer group">
               <Star className="w-4 h-4 text-[#3B8388] mr-2 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="text-sm text-gray-300">Inovação em Hardware</span>
+              <span className="text-sm text-gray-300">Inovação com AI</span>
               <ChevronRight className="w-4 h-4 text-gray-400 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </div>
 
@@ -185,7 +185,7 @@ function App() {
 
             </h1>
             <p className="text-xl lg:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
-              Desenvolvemos produtos de hardware personalizados para atender às necessidades específicas do seu negócio
+              Oferecemos soluções tecnológicas que trabalham em conjunto da Inteligência Artificial personalizados para otimizar os processos do seu negócio.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
               <a href="#produtos" className="group bg-white text-[#022162] px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 flex items-center justify-center hover:scale-105 hover:shadow-2xl hover:shadow-white/10">
@@ -218,7 +218,7 @@ function App() {
             {/* Produto 1 */}
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#3B8388]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#022162]/20 cursor-pointer">
               <div className="w-16 h-16 bg-gradient-to-br from-[#022162] to-[#3B8388] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#022162]/20">
-                <img src="/public/HareInteract.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
+                <img src="/home/hwadmin2/HareWare-Site/public/HareInteract.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#3B8388] transition-colors duration-300">HareInteract</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
@@ -233,7 +233,7 @@ function App() {
             {/* Produto 2 */}
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#3B8388]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#082125]/20 cursor-pointer">
               <div className="w-16 h-16 bg-gradient-to-br from-[#082125] to-[#3B8388] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#082125]/20">
-                <img src="/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
+                <img src="/home/hwadmin2/HareWare-Site/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#3B8388] transition-colors duration-300">HareBlast</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
@@ -248,7 +248,7 @@ function App() {
             {/* Produto 3 */}
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#3B8388]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#3B8388]/20 cursor-pointer">
               <div className="w-16 h-16 bg-gradient-to-br from-[#3B8388] to-[#022162] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#3B8388]/20">
-                <img src="/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
+                <img src="/home/hwadmin2/HareWare-Site/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#3B8388] transition-colors duration-300">HareTable</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
@@ -262,7 +262,7 @@ function App() {
 
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#3B8388]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#3B8388]/20 cursor-pointer">
               <div className="w-16 h-16 bg-gradient-to-br from-[#3B8388] to-[#022162] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#3B8388]/20">
-                <img src="/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
+                <img src="/home/hwadmin2/HareWare-Site/public/hareWare.png" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-[#022162]/20" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#3B8388] transition-colors duration-300">HareInsight</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
