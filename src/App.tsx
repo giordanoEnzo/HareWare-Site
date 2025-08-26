@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowRight, Package, Zap, Users, Mail, Phone, MapPin, Send, ChevronRight, Star, Shield, Cpu, CheckCircle, AlertCircle, Instagram } from 'lucide-react';
-// import { sendContactForm } from './config/api'; // Descomente quando tiver um backend
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HareBlast from './pages/HareBlast';
+import HareInteract from './pages/HareInteract';
 
-function App() {
+
+function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -46,27 +49,22 @@ function App() {
     setSubmitStatus('idle');
 
     try {
-      // Simulando envio para um servidor (remova quando tiver backend)
+     
       await new Promise(resolve => setTimeout(resolve, 2000));
 
-      // DESCOMENTE ESTAS LINHAS QUANDO TIVER UM BACKEND REAL:
-      // const result = await sendContactForm(formData);
-      // if (!result.success) {
-      //   throw new Error(result.error);
-      // }
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', company: '', message: '' });
       setErrors({});
 
-      // Reset do status após 5 segundos
+      
       setTimeout(() => setSubmitStatus('idle'), 5000);
 
     } catch (error) {
       setSubmitStatus('error');
       console.error('Erro ao enviar formulário:', error);
 
-      // Reset do status após 5 segundos
+      
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
@@ -80,7 +78,7 @@ function App() {
       [name]: value
     });
 
-    // Limpar erro do campo quando o usuário começar a digitar
+    
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -96,72 +94,47 @@ function App() {
             <div className="flex items-center group cursor-pointer">
               {/*logo */}
               <div className="mr-3 group-hover:scale-110 transition-transform duration-300">
-                <img src="/public/HareWare.png" alt="Logo" className="w-10 h-10 shadow-lg shadow-[#022162]/20" />
+                <img src="/HareWare.png" alt="Logo" className="w-10 h-10 shadow-lg shadow-[#022162]/20" />
               </div>
-
-              {/* Letreiro */}
-              <img
-                src="/public/letreiro.png"
-                alt="Letreiro"
-                className="h-10 max-w-[150px] object-contain" // ajuste a altura como quiser
-              />
-
-
+              <span className="text-xl font-bold text-white group-hover:text-[#1952fe] transition-colors duration-300">
+                HareWare
+              </span>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <a href="#produtos" className="text-gray-400 hover:text-white transition-all duration-300 relative group">
-                Nossos Produtos
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#022162] to-[#1952fe] group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#demanda" className="text-gray-400 hover:text-white transition-all duration-300 relative group">
-                Produtos Sob Demanda
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#022162] to-[#1952fe] group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#contato" className="text-gray-400 hover:text-white transition-all duration-300 relative group">
-                Contato
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#022162] to-[#1952fe] group-hover:w-full transition-all duration-300"></span>
-              </a>
+           
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="#inicio" className="text-gray-400 hover:text-white transition-colors duration-300">Início</a>
+              <a href="#produtos" className="text-gray-400 hover:text-white transition-colors duration-300">Produtos</a>
+              <a href="#demanda" className="text-gray-400 hover:text-white transition-colors duration-300">Sob Demanda</a>
+              <a href="#contato" className="text-gray-400 hover:text-white transition-colors duration-300">Contato</a>
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:flex">
-              <a href="#contato" className="bg-[#1952fe] text-white px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-[#022162]/25 transition-all duration-300 hover:scale-105 font-medium">
-                Fale Conosco
-              </a>
-            </div>
-
-            {/* Mobile menu button */}
+            
             <button
-              className="md:hidden text-white hover:text-gray-300 transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-white hover:text-[#1952fe] transition-colors duration-300"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {
-          isMenuOpen && (
-            <div className="md:hidden bg-[#0A0A0A]/95 backdrop-blur-xl border-t border-white/10 animate-in slide-in-from-top duration-300">
-              <div className="px-4 py-6 space-y-4">
-                <a href="#produtos" className="block text-gray-400 hover:text-white transition-colors">Nossos Produtos</a>
-                <a href="#demanda" className="block text-gray-400 hover:text-white transition-colors">Produtos Sob Demanda</a>
-                <a href="#contato" className="block text-gray-400 hover:text-white transition-colors">Contato</a>
-                <a href="#contato" className="block bg-gradient-to-r from-[#022162] to-[#1952fe] text-white px-6 py-3 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-                  Fale Conosco
-                </a>
+        
+          {isMenuOpen && (
+            <nav className="md:hidden py-4 border-t border-white/10">
+              <div className="flex flex-col space-y-4">
+                <a href="#inicio" className="text-gray-400 hover:text-white transition-colors duration-300">Início</a>
+                <a href="#produtos" className="text-gray-400 hover:text-white transition-colors duration-300">Produtos</a>
+                <a href="#demanda" className="text-gray-400 hover:text-white transition-colors duration-300">Sob Demanda</a>
+                <a href="#contato" className="text-gray-400 hover:text-white transition-colors duration-300">Contato</a>
               </div>
-            </div>
-          )
-        }
-      </header >
+            </nav>
+          )}
+        </div>
+      </header>
 
-      {/* Hero Section */}
+      
       < section className="relative bg-[#0A0A0A] text-white py-20 lg:py-32 overflow-hidden" >
-        {/* Animated Background */}
+        
         < div className="absolute inset-0" >
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#022162]/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#1952fe]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -218,37 +191,37 @@ function App() {
             {/* Produto 1 */}
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#00B9D7]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#022162]/20 cursor-pointer">
               <div className="w-16 h-16 bg-[#00B9D7] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#022162]/20">
-                <img src="/public/HareInteract.png" alt="Logo" className="w-10 h-10" />
+                <img src="/HareInteract.png" alt="Logo" className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00B9D7] transition-colors duration-300">HareInteract</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
                 Inteligência Artificial integrada ao WhatsApp para automatizar diversas funções, desde funil de vendas até o papel de uma secretária virtual.
               </p>
-              <a href="#contato" className="text-[#B4B3B3] font-semibold hover:text-white transition-colors duration-300 flex items-center group/link">
+              <Link to="/hareinteract" className="text-[#B4B3B3] font-semibold hover:text-white transition-colors duration-300 flex items-center group/link">
                 Saiba mais
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-              </a>
+              </Link>
             </div>
-
-            {/* Produto 2 */}
+            
+            
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#022162]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#082125]/20 cursor-pointer">
               <div className="w-16 h-16 bg-[#022162] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#082125]/20">
-                <img src="/public/HareBlast.png" alt="Logo" className="w-10 h-10" />
+                <img src="/HareBlast.png" alt="Logo" className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#1952fe] transition-colors duration-300">HareBlast</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
                 Sistema de disparo de promoções no WhatsApp com IA que gera textos de copy e imagens promocionais para suas campanhas.
               </p>
-              <a href="#contato" className="text-[#B4B3B3] font-semibold hover:text-white transition-colors duration-300 flex items-center group/link">
+              <Link to="/hareblast" className="text-[#B4B3B3] font-semibold hover:text-white transition-colors duration-300 flex items-center group/link">
                 Saiba mais
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
-              </a>
+              </Link>
             </div>
 
-            {/* Produto 3 */}
+            
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#F3722C]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#1952fe]/20 cursor-pointer">
               <div className="w-16 h-16 bg-[#F3722C] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#1952fe]/20">
-                <img src="/public/HareWare.png" alt="Logo" className="w-10 h-10" />
+                <img src="/HareWare.png" alt="Logo" className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#F3722C] transition-colors duration-300">HareTable</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
@@ -262,7 +235,7 @@ function App() {
 
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#B4B3B3]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#B4B3B3]/20 cursor-pointer">
               <div className="w-16 h-16 bg-[#B4B3B3] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#B4B3B3]/20">
-                <img src="/public/HareWare.png" alt="Logo" className="w-10 h-10" />
+                <img src="/HareWare.png" alt="Logo" className="w-10 h-10" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#B4B3B3] transition-colors duration-300">HareInsight</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
@@ -630,12 +603,12 @@ function App() {
             <div className="col-span-2">
               <div className="flex items-center mb-4 group cursor-pointer">
                 <div className="w-10 h-10 bg-gradient-to-br [#022162] to-[#1952fe] rounded-xl flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#022162]/20">
-                  <img src="/public/HareWare.png" alt="Logo" className="w-10 h-10 shadow-lg shadow-[#022162]/20" />
+                  <img src="/HareWare.png" alt="Logo" className="w-10 h-10 shadow-lg shadow-[#022162]/20" />
                 </div>
 
                 {/* Letreiro */}
                 <img
-                  src="/public/letreiro.png"
+                  src="/letreiro.png"
                   alt="Letreiro"
                   className="h-10 max-w-[150px] object-contain" // ajuste a altura como quiser
                 />
@@ -679,6 +652,18 @@ function App() {
         </div>
       </footer >
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/hareblast" element={<HareBlast />} />
+        <Route path="/hareinteract" element={<HareInteract />} />
+      </Routes>
+    </Router>
   );
 }
 
