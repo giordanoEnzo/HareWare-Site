@@ -385,7 +385,7 @@ function HomePage() {
                 <div className="flex flex-col gap-4">
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/5519999344528?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                    href="https://wa.me/5519998033434?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center group cursor-pointer"
@@ -398,7 +398,7 @@ function HomePage() {
                         WhatsApp
                       </h4>
                       <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                        +55 (19) 99934-4528
+                        +55 (19) 99803-3434
                       </p>
                     </div>
                   </a>
