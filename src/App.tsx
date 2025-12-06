@@ -49,7 +49,7 @@ function HomePage() {
     setSubmitStatus('idle');
 
     try {
-     
+
       await new Promise(resolve => setTimeout(resolve, 2000));
 
 
@@ -57,14 +57,14 @@ function HomePage() {
       setFormData({ name: '', email: '', company: '', message: '' });
       setErrors({});
 
-      
+
       setTimeout(() => setSubmitStatus('idle'), 5000);
 
     } catch (error) {
       setSubmitStatus('error');
       console.error('Erro ao enviar formulário:', error);
 
-      
+
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
@@ -78,7 +78,7 @@ function HomePage() {
       [name]: value
     });
 
-    
+
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -101,7 +101,7 @@ function HomePage() {
               </span>
             </div>
 
-           
+
             <nav className="hidden md:flex items-center space-x-8">
               <a href="#inicio" className="text-gray-400 hover:text-white transition-colors duration-300">Início</a>
               <a href="#produtos" className="text-gray-400 hover:text-white transition-colors duration-300">Produtos</a>
@@ -109,7 +109,7 @@ function HomePage() {
               <a href="#contato" className="text-gray-400 hover:text-white transition-colors duration-300">Contato</a>
             </nav>
 
-            
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-white hover:text-[#1952fe] transition-colors duration-300"
@@ -118,7 +118,7 @@ function HomePage() {
             </button>
           </div>
 
-        
+
           {isMenuOpen && (
             <nav className="md:hidden py-4 border-t border-white/10">
               <div className="flex flex-col space-y-4">
@@ -132,9 +132,9 @@ function HomePage() {
         </div>
       </header>
 
-      
+
       < section className="relative bg-[#0A0A0A] text-white py-20 lg:py-32 overflow-hidden" >
-        
+
         < div className="absolute inset-0" >
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#022162]/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#1952fe]/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -202,8 +202,8 @@ function HomePage() {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" />
               </Link>
             </div>
-            
-            
+
+
             <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#022162]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#082125]/20 cursor-pointer">
               <div className="w-16 h-16 bg-[#022162] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#082125]/20">
                 <img src="/HareBlast.png" alt="Logo" className="w-10 h-10" />
@@ -218,14 +218,14 @@ function HomePage() {
               </Link>
             </div>
 
-            
-            <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#F3722C]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#1952fe]/20 cursor-pointer">
-              <div className="w-16 h-16 bg-[#F3722C] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#1952fe]/20">
-                <img src="/HareWare.png" alt="Logo" className="w-10 h-10" />
+
+            <div className="group bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#022162]/50 transition-all duration-500 hover:bg-white/10 hover:scale-105 hover:shadow-2xl hover:shadow-[#082125]/20 cursor-pointer">
+              <div className="w-16 h-16 bg-[#022162] rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-[#082125]/20">
+                <img src="/haremagic.png" alt="Logo" className="w-14 h-14" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#F3722C] transition-colors duration-300">HareTable</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#1952fe] transition-colors duration-300">HareMagic</h3>
               <p className="text-gray-400 mb-6 group-hover:text-gray-300 transition-colors duration-300">
-                Sistema de Gestão de restaurantes, otimizando o fluxo de pedidos, mesas e atendimento.
+                IA que cria posts, identidade visual e logos a partir das suas referências.
               </p>
               <a href="#contato" className="text-[#B4B3B3] font-semibold hover:text-white transition-colors duration-300 flex items-center group/link">
                 Saiba mais
@@ -447,7 +447,7 @@ function HomePage() {
                     {/* Mapa logo abaixo */}
                     <div className="mt-2 rounded-lg overflow-hidden">
                       <iframe
-                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.555128211768!2d-47.3914549!3d-22.358807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8773da2e3fb59%3A0xc6ee16c1f9d2d64b!2sR.%20Louren%C3%A7o%20Dias%2C%20640%20-%20Centro%2C%20Araras%20-%20SP%2C%2013601-180!5e0!3m2!1spt-BR!2sbr!4v1691520000000!5m2!1spt-BR!2sbr"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.555128211768!2d-47.3914549!3d-22.358807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8773da2e3fb59%3A0xc6ee16c1f9d2d64b!2sR.%20Louren%C3%A7o%20Dias%2C%20640%20-%20Centro%2C%20Araras%20-%20SP%2C%2013601-180!5e0!3m2!1spt-BR!2sbr!4v1691520000000!5m2!1spt-BR!2sbr"
                         width="100%"
                         height="250"
                         style={{ border: 0 }}
@@ -623,7 +623,7 @@ function HomePage() {
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#produtos" className="hover:text-[#1952fe] transition-colors duration-300 hover:translate-x-1 inline-block">HareInteract</a></li>
                 <li><a href="#produtos" className="hover:text-[#1952fe] transition-colors duration-300 hover:translate-x-1 inline-block">HareBlast</a></li>
-                <li><a href="#produtos" className="hover:text-[#1952fe] transition-colors duration-300 hover:translate-x-1 inline-block">HareTable</a></li>
+                <li><a href="#produtos" className="hover:text-[#1952fe] transition-colors duration-300 hover:translate-x-1 inline-block">HareMagic</a></li>
                 <li><a href="#produtos" className="hover:text-[#1952fe] transition-colors duration-300 hover:translate-x-1 inline-block">HareInsight</a></li>
 
 
